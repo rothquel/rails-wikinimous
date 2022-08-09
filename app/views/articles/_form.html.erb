@@ -1,0 +1,7 @@
+<%= form_for(@article) do |f|%>
+  <%= f.label :title, class: "fw-bold" %>
+  <%= f.text_field :title, class: "form-control my-3" %>
+  <%= f.label :content, class: "fw-bold"%>
+  <%= f.text_area :content, class: "form-control my-3" %>
+  <%= f.submit class: "btn btn-primary form-control my-3" %>
+<% end %>
