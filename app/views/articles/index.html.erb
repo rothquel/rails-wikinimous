@@ -1,7 +1,14 @@
 <h1>All articles</h1>
 
 <ul class="py-3 list-group">
-<% @articles.each do |article| %>
-<li class="py-3 list-group-item"><%= link_to article.title, article_path(article) %></li>
-<% end %>
+  <% @articles.each do |article| %>
+    <li class="py-3 list-group-item d-flex justify-content-between align-items-center">
+      <%= link_to article.title, article_path(article) %>
+
+      <%= link_to article_path(article),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do%>
+        <i class='fa-regular fa-trash-can'></i>
+        <% end %>
+    </li>
+  <% end %>
 </ul>
